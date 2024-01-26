@@ -2,12 +2,15 @@ package server
 
 import (
 	"fmt"
+	"github.com/Xplit495/hangman-classic/util"
 	"log"
 	"net/http"
 	"os"
 )
 
 func LaunchServer() {
+	util.ClearTerminal()
+
 	wd, err := os.Getwd()
 	if err != nil {
 		log.Fatal(err)
@@ -28,4 +31,5 @@ func LaunchServer() {
 	if err1 != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
+
 }
