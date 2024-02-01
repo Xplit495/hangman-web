@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
+	"runtime"
 )
 
 func LaunchServer() {
@@ -31,13 +33,36 @@ func LaunchServer() {
 			r.ParseForm()
 			username := r.FormValue("username")
 			difficulty := r.FormValue("difficulty")
-			preRequistiesGame.PreRequistiesGame(difficulty, username)
+			wordPartiallyReveal := preRequistiesGame.PreRequistiesGame(difficulty, username)
+			fmt.Println("Le mot à trouver est: ", wordPartiallyReveal)
+			http.Redirect(w, r, "/web/html/gamePage.html", http.StatusSeeOther)
 		}
 	})
 
-	fmt.Println("Pour accéder au jeu -> http://localhost:8080/")
+	err = openBrowser("http://localhost:8080/")
+	if err != nil {
+		fmt.Println("Impossible d'ouvrir le navigateur")
+	}
 	err = http.ListenAndServe(":8080", nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
+
+}
+
+func openBrowser(url string) error {
+	var cmd string
+	var args []string
+
+	switch runtime.GOOS {
+	case "windows":
+		cmd = "cmd"
+		args = []string{"/c", "start"}
+	case "darwin":
+		cmd = "open"
+	default:
+		cmd = "xdg-open"
+	}
+	args = append(args, url)
+	return exec.Command(cmd, args...).Start()
 }
