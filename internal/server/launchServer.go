@@ -35,7 +35,7 @@ func LaunchServer() {
 			difficulty := r.FormValue("difficulty")
 			wordPartiallyReveal := preRequistiesGame.PreRequistiesGame(difficulty, username)
 			fmt.Println("Le mot à trouver est: ", wordPartiallyReveal)
-			http.Redirect(w, r, "/web/html/gamePage.html", http.StatusSeeOther)
+			http.Redirect(w, r, "html/gamePage.html", http.StatusSeeOther)
 		}
 	})
 
