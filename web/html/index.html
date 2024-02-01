@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr" >
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Hangman-Web</title>
-  <link rel="icon" href="../resources/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../resourcesWeb/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
+
+<form action="/submit" method="post">
+
+  <div class="input-container">
+    <label>
+      <input type="text" class="input" name="username" placeholder="Username" required maxlength="15">
+    </label>
+  </div>
+
+  <div class="button-container">
+    <button type="submit" class="button" id="easy" name="difficulty" value="facile">Facile</button>
+    <button type="submit" class="button" id="medium" name="difficulty" value="moyen">Moyen</button>
+    <button type="submit" class="button" id="hard" name="difficulty" value="difficile">Difficile</button>
+  </div>
+
+</form>
 
 </body>
 </html>

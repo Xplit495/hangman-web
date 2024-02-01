@@ -1,7 +1,74 @@
 body {
-  background-image: url("../resources/WallpaperHangman.png");
+  background-image: url("../resourcesWeb/WallpaperHangman.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25vh;
+  padding-bottom: 2%;
+  box-sizing: border-box;
+}
+
+.input {
+  color: #8707ff;
+  border: 2px solid #8707ff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  background: transparent;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.button-container{
+  display: flex;
+  margin-top: 4%;
+  width: 98vw;
+  justify-content: center;
+}
+
+.button {
+  margin-right: 3%;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.button:last-child {
+  margin-right: 0;
+  font-size: 15px;
+}
+
+.button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+#easy {
+  background-color: #172888
+}
+
+#medium {
+  background-color: #4a1f6e;
+}
+
+#hard {
+  background-color: #701f57;
 }
