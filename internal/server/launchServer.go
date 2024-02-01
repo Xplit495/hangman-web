@@ -3,6 +3,7 @@ package server
 import (
 	"fmt"
 	"github.com/Xplit495/hangman-classic/util"
+	"hangman-web/pkg/utils/preRequistiesGame"
 	"log"
 	"net/http"
 	"os"
@@ -28,8 +29,9 @@ func LaunchServer() {
 	http.HandleFunc("/submit", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			r.ParseForm()
-			//username := r.FormValue("username")
-			//difficulty := r.FormValue("difficulty")
+			username := r.FormValue("username")
+			difficulty := r.FormValue("difficulty")
+			preRequistiesGame.PreRequistiesGame(difficulty, username)
 		}
 	})
 
