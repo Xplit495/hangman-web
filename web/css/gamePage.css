@@ -1,0 +1,35 @@
+.bande {
+    background: linear-gradient(to bottom, #ff69f3, #7e7eff);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+}
+
+.liste_mots {
+    background: linear-gradient(to bottom, #a902f7, #fdfdfd);
+    color: white;
+    padding: 20px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    height: 100%;
+    width: 45%;
+}
+
+.boutons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+}
