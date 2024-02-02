@@ -11,7 +11,7 @@
 }
 
 .liste_mots {
-    background: linear-gradient(to bottom, #a902f7, #fdfdfd);
+    background: linear-gradient(to bottom, #510176, #fdfdfd);
     color: white;
     padding: 20px;
     text-align: left;
@@ -27,9 +27,10 @@
     margin-top: 20px;
 }
 
-button {
+.button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
-    margin: 0 10px;
+    cursor: pointer;  
+    margin: 0 10px; 
 }
+
