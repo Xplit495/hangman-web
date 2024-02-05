@@ -1,25 +1,31 @@
-.bande {
-    background: linear-gradient(to bottom, #ff69f3, #7e7eff);
-    color: white;
-    padding: 20px;
-    text-align: left;
+body {
+    background-image: url('https://cdn.discordapp.com/attachments/1198976461680418858/1200213570542129273/WallpaperHangman.png?ex=65ce977e&is=65bc227e&hm=56577d2010ea46b448cf91b84de7e8a8dc2bc2924ed11f0fc776e3be306564ed&');
+    color: aliceblue;
+    background-size: cover;  /* Use 'cover' for responsive background sizing */
+    background-repeat: no-repeat;
+    padding: 10px;
+    text-align: center;
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
 }
 
-.liste_mots {
+.bande-noire {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(to bottom, #510176, #fdfdfd);
     color: white;
-    padding: 20px;
+    padding: 15px;
     text-align: left;
     position: absolute;
-    top: 0;
-    left: 25%;
-    height: 100%;
-    width: 45%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 .boutons {
@@ -27,10 +33,13 @@
     margin-top: 20px;
 }
 
-.button {
+button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;  
     margin: 0 10px; 
 }
 
+button:hover {
+    background: linear-gradient(to bottom, #510176, #fdfdfd);
+}
