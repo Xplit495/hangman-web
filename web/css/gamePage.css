@@ -12,7 +12,7 @@ body {
     font-size: 13px;
 }
 
-.bande-noire {
+.bande-violet {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,6 +28,22 @@ body {
     z-index: 1;
 }
 
+.bande-rose {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #a80b73, #fdfdfd);
+    color: white;
+    padding: 15px;
+    text-align: left;
+    position: absolute;
+    top: -163%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
 .boutons {
     text-align: center;
     margin-top: 20px;
@@ -36,8 +52,8 @@ body {
 button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;  
-    margin: 0 10px; 
+    cursor: pointer;
+    margin: 10px;
 }
 
 button:hover {
