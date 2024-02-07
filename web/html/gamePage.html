@@ -6,23 +6,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    <header>
-        <div class="bande-violet">
-            <h2>Hangman-Web</h2>
-            <div class="Violet-Texte">
-                <p>Je suis Alexandre, un humain français</p>
+<div class="bande">
+    <img src="../resourcesWeb/pose9.png" alt="Description de l'image">
+</div>
+
+<div class="cadre-rouge">{{.DynamicText}}</div>
+
+<form class="container" action="">
+    <div class="input-container">
+        <div class="input-content">
+            <div class="input-dist">
+                <div class="input-type">
+                    <label>
+                        <input class="input-is" type="text" required placeholder="Proposition" maxlength="30" />
+                    </label>
+                </div>
             </div>
         </div>
-        <div class="bande-rose">
-            <div class="Rose-texte">
-                <p>Je ne suis pas Alexandre</p>
-            </div>
-        </div>
-        <div class="boutons">
-            <button onclick="afficherTexte('Bouton 1')">Bouton 1</button></br>
-            <button onclick="afficherTexte('Bouton 2')">Bouton 2</button>
-        </div>
-    </header>
+    </div>
+    <button class="submit-button">Valider</button>
+</form>
+
 </body>
+
 </html>
