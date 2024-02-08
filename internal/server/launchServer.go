@@ -28,9 +28,13 @@ func LaunchServer() {
 
 	wd, _ := os.Getwd()
 
+	fileServer := http.FileServer(http.Dir(wd + "\\web"))
+
 	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
 		if request.URL.Path == "/" {
 			http.ServeFile(writer, request, wd+"\\web\\html\\index.html")
+		} else {
+			fileServer.ServeHTTP(writer, request)
 		}
 	})
 

@@ -34,11 +34,20 @@ body {
 }
 
 #username{
-
+    display: flex;
+    margin-left: 60%;
+    font-size: 50px;
+    color: #d2c38f;
 }
 
 #word{
-
+    width: 50%;
+    height: 10%;
+    display: flex;
+    margin-left: 60%;
+    margin-top: 20%;
+    font-size: 50px;
+    color: #d2c38f;
 }
 
 .container {
