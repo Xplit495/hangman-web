@@ -5,7 +5,6 @@ import (
 	"github.com/Xplit495/hangman-classic/util"
 	"hangman-web/pkg/utils/preRequistiesGame"
 	"html/template"
-	"log"
 	"net/http"
 	"os"
 	"os/exec"
@@ -13,72 +12,57 @@ import (
 	"strings"
 )
 
+type TemplateData struct {
+	DynamicText string
+	Username    string
+}
+
+var (
+	wordPartiallyReveal []string
+	username            string
+)
+
 func LaunchServer() {
-
-	var wordPartiallyReveal []string
-
-	type TemplateData struct {
-		DynamicText string
-	}
 
 	util.ClearTerminal()
 
-	wd, err := os.Getwd()
-	if err != nil {
-		log.Fatal(err)
-	}
+	wd, _ := os.Getwd()
 
-	fileServer := http.FileServer(http.Dir(wd + "\\web"))
-
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path == "/" {
-			http.ServeFile(w, r, wd+"\\web\\html\\index.html")
-		} else {
-			fileServer.ServeHTTP(w, r)
+	http.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
+		if request.URL.Path == "/" {
+			http.ServeFile(writer, request, wd+"\\web\\html\\index.html")
 		}
 	})
 
-	http.HandleFunc("/submit", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == http.MethodPost {
-			r.ParseForm()
-			username := r.FormValue("username")
-			difficulty := r.FormValue("difficulty")
+	http.HandleFunc("/submit", func(writer http.ResponseWriter, request *http.Request) {
+		if request.Method == http.MethodPost {
+			request.ParseForm()
+			username = request.FormValue("username")
+			difficulty := request.FormValue("difficulty")
 			wordPartiallyReveal = preRequistiesGame.PreRequistiesGame(difficulty, username)
 			fmt.Println("Le mot à trouver est: ", wordPartiallyReveal)
-			http.Redirect(w, r, "html/gamePage.html", http.StatusSeeOther)
+			http.Redirect(writer, request, "/gamePage.html", http.StatusSeeOther)
 		}
 	})
 
-	tmpl, err := template.ParseFiles(wd + "\\web\\html\\index.html")
-	if err != nil {
-		log.Fatal("Erreur lors de l'analyse du template :", err)
-	}
+	http.HandleFunc("/gamePage.html", func(writer http.ResponseWriter, request *http.Request) {
+		data := TemplateData{
+			DynamicText: strings.Join(wordPartiallyReveal, ""),
+			Username:    username,
+		}
+		tmpl, _ := template.ParseFiles(wd + "\\web\\html\\gamePage.html")
+		tmpl.Execute(writer, data)
 
-	// Modifie le handler pour la route "/"
-	http.HandleFunc("/gamePage.html", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path == "/gamePage.html" {
-			// Crée les données dynamiques à afficher
-			data := TemplateData{
-				DynamicText: strings.Join(wordPartiallyReveal, ""),
-			}
-			// Exécute le template avec les données dynamiques
-			err1 := tmpl.Execute(w, data)
-			if err1 != nil {
-				http.Error(w, "Erreur lors de l'exécution du template", http.StatusInternalServerError)
-			}
-		} else {
-			fileServer.ServeHTTP(w, r)
+		if request.Method == http.MethodPost {
+			request.ParseForm()
+			proposition := request.FormValue("proposition")
+			fmt.Println("La proposition est:" + proposition)
 		}
 	})
 
-	err = openBrowser("http://localhost:8080/")
-	if err != nil {
-		fmt.Println("Impossible d'ouvrir le navigateur")
-	}
-	err = http.ListenAndServe(":8080", nil)
-	if err != nil {
-		log.Fatal("ListenAndServe: ", err)
-	}
+	openBrowser("http://localhost:8080/")
+
+	http.ListenAndServe(":8080", nil)
 
 }
 

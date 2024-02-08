@@ -9,18 +9,19 @@
 
 <body>
 <div class="bande">
-    <img src="../resourcesWeb/pose9.png" alt="Description de l'image">
+    <img src="../resourcesWeb/pose9.png" alt="Pose Hangman">
 </div>
 
-<div class="cadre-rouge">{{.DynamicText}}</div>
+<div id="word">{{.DynamicText}}</div>
+<div id="username">"{{.Username}}</div>
 
-<form class="container" action="">
+<form method="post" class="container">
     <div class="input-container">
         <div class="input-content">
             <div class="input-dist">
                 <div class="input-type">
                     <label>
-                        <input class="input-is" type="text" required placeholder="Proposition" maxlength="30" />
+                        <input class="input-is" type="text" name="proposition" required placeholder="Proposition" maxlength="30" />
                     </label>
                 </div>
             </div>

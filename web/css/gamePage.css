@@ -33,13 +33,12 @@ body {
     100%{background-position:100% 0}
 }
 
-.cadre-rouge {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 300px;
-    height: 100px;
-    border: 1px solid red
+#username{
+
+}
+
+#word{
+
 }
 
 .container {
