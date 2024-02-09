@@ -4,6 +4,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    max-width: 60%;
 }
 
 .bande {
@@ -48,14 +49,15 @@ body {
     margin-top: 20%;
     font-size: 50px;
     color: #d2c38f;
+    margin-top : 200px;
 }
 
 .container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     font-size: 100%;
-    margin-left: 35%;
-    margin-top: 30%;
+    margin-left: 100%;
+    margin-top: 18%;
     align-items: center;
     justify-items: center;
     flex-direction: column;
@@ -66,6 +68,8 @@ body {
     filter: drop-shadow(46px 36px 24px #4090b5)
     drop-shadow(-55px -40px 25px #9e30a9);
     animation: blinkShadowsFilter 8s ease-in infinite;
+    margin-left: 40%;
+    margin-top: -20%;
 }
 
 .input-content {
@@ -254,9 +258,8 @@ body {
     cursor: pointer;
     font-size: medium;
     font-weight: bold;
+    z-index: 1;
 }
-
-
 
 @keyframes rotate {
     0% {
