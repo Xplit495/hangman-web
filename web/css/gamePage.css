@@ -4,6 +4,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    max-width: 60%;
 }
 
 .bande {
@@ -35,7 +36,7 @@ body {
 
 #username{
     display: flex;
-    margin-left: 60%;
+    margin-left: 83%;
     font-size: 50px;
     color: #d2c38f;
 }
@@ -44,18 +45,19 @@ body {
     width: 50%;
     height: 10%;
     display: flex;
-    margin-left: 60%;
+    margin-left: 80%;
     margin-top: 20%;
     font-size: 50px;
     color: #d2c38f;
+    margin-top : 200px;
 }
 
 .container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     font-size: 100%;
-    margin-left: 35%;
-    margin-top: 30%;
+    margin-left: 100%;
+    margin-top: 18%;
     align-items: center;
     justify-items: center;
     flex-direction: column;
@@ -66,6 +68,8 @@ body {
     filter: drop-shadow(46px 36px 24px #4090b5)
     drop-shadow(-55px -40px 25px #9e30a9);
     animation: blinkShadowsFilter 8s ease-in infinite;
+    margin-left: 40%;
+    margin-top: -20%;
 }
 
 .input-content {
@@ -231,47 +235,6 @@ body {
     color: hsla(192, 100%, 88%, 0.806);
 }
 
-.submit-button {
-    width: 40%;
-    border: none;
-    color: hsla(192, 100%, 88%, 0.8);
-    font-size: 1rem;
-    background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(102, 224, 255, 0.2) 27%,
-            rgba(102, 224, 255, 0.2) 63%,
-            transparent 100%
-    );
-    clip-path: polygon(0 0, 85% 0%, 100% 0, 100% 15%, 100% 90%, 91% 100%, 0 100%);
-    padding: 0.5em;
-    animation: blinkShadowsFilter 0.5s ease-in infinite;
-    transition: all 500ms;
-}
-
-.submit-button:hover {
-    color: hsl(0, 0%, 100%);
-    cursor: pointer;
-    font-size: medium;
-    font-weight: bold;
-}
-
-
-
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg) translate(-50%, 20%);
-    }
-
-    50% {
-        transform: rotate(180deg) translate(40%, 10%);
-    }
-
-    to {
-        transform: rotate(360deg) translate(-50%, 20%);
-    }
-}
-
 @keyframes blinkShadowsFilter {
     0% {
         filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706))
@@ -297,4 +260,29 @@ body {
         filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706))
         drop-shadow(-55px -40px 28px #9e30a9);
     }
+}
+
+
+.submit-button {
+    width: 100%;
+    border: none;
+    color: hsla(192, 100%, 88%, 0.8);
+    font-size: 1rem;
+    background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(102, 224, 255, 0.2) 27%,
+            rgba(102, 224, 255, 0.2) 63%,
+            transparent 100%
+    );
+    padding: 100%;
+}
+
+.submit-button:hover {
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    font-size: medium;
+    font-weight: bold;
+    z-index: 1;
+    margin-left: 83%;
 }
