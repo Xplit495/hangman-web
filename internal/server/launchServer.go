@@ -3,6 +3,7 @@ package server
 import (
 	"fmt"
 	"github.com/Xplit495/hangman-classic/util"
+	"hangman-web/internal/game"
 	"hangman-web/pkg/utils/preRequistiesGame"
 	"html/template"
 	"net/http"
@@ -13,12 +14,17 @@ import (
 )
 
 type TemplateData struct {
-	DynamicText string
-	Username    string
+	DynamicText   string
+	Username      string
+	LetterHistory []string
+	WordHistory   []string
 }
 
 var (
 	wordPartiallyReveal []string
+	arrSelectWord       []string
+	letterHistory       []string
+	wordHistory         []string
 	username            string
 )
 
@@ -43,25 +49,28 @@ func LaunchServer() {
 			request.ParseForm()
 			username = request.FormValue("username")
 			difficulty := request.FormValue("difficulty")
-			wordPartiallyReveal = preRequistiesGame.PreRequistiesGame(difficulty, username)
-			fmt.Println("Le mot à trouver est: ", wordPartiallyReveal)
+			wordPartiallyReveal, arrSelectWord = preRequistiesGame.PreRequistiesGame(difficulty, username)
+			fmt.Println("Le mot est: ", arrSelectWord)
 			http.Redirect(writer, request, "/gamePage.html", http.StatusSeeOther)
 		}
 	})
 
 	http.HandleFunc("/gamePage.html", func(writer http.ResponseWriter, request *http.Request) {
-		data := TemplateData{
-			DynamicText: strings.Join(wordPartiallyReveal, ""),
-			Username:    username,
-		}
-		tmpl, _ := template.ParseFiles(wd + "\\web\\html\\gamePage.html")
-		tmpl.Execute(writer, data)
-
 		if request.Method == http.MethodPost {
 			request.ParseForm()
 			proposition := request.FormValue("proposition")
-			fmt.Println("La proposition est:" + proposition)
+			letterHistory, wordHistory, wordPartiallyReveal = game.CheckProposition(proposition, arrSelectWord, wordPartiallyReveal, letterHistory, wordHistory)
 		}
+
+		data := TemplateData{
+			DynamicText:   strings.Join(wordPartiallyReveal, ""),
+			Username:      username,
+			LetterHistory: letterHistory,
+			WordHistory:   wordHistory,
+		}
+
+		tmpl, _ := template.ParseFiles(wd + "\\web\\html\\gamePage.html")
+		tmpl.Execute(writer, data)
 	})
 
 	openBrowser("http://localhost:8080/")

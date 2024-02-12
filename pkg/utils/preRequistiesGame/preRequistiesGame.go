@@ -1,18 +1,14 @@
 package preRequistiesGame
 
 import (
-	"fmt"
 	"github.com/Xplit495/hangman-classic/util"
 )
 
-func PreRequistiesGame(difficulty string, username string) []string {
+func PreRequistiesGame(difficulty string, username string) ([]string, []string) {
 	util.ClearTerminal()
 	absolutePath := util.SelectDictionnaryPath(difficulty)
-	randomWord := util.SelectRandomWordIntoDictionnary(absolutePath)
-	clues := util.GenerateWordClue(randomWord)
-	wordPartiallyReveal := util.AssociateClueToWord(clues, randomWord)
-	fmt.Println("Bienvenue ", username)
-	fmt.Println("Vous avez choisi la difficulté: ", difficulty)
-	fmt.Println("Le est: ", randomWord)
-	return wordPartiallyReveal
+	arrSelectWord := util.SelectRandomWordIntoDictionnary(absolutePath)
+	clues := util.GenerateWordClue(arrSelectWord)
+	wordPartiallyReveal := util.AssociateClueToWord(clues, arrSelectWord)
+	return wordPartiallyReveal, arrSelectWord
 }
