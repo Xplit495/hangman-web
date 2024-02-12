@@ -68,6 +68,22 @@ body {
     color: #d2c38f;
 }
 
+#goodWarning{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    margin-left: 80%;
+    color: #00ff00;
+}
+
+#badWarning{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    margin-left: 80%;
+    color: #ff0000;
+}
+
 .container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
