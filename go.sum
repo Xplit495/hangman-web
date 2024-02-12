@@ -34,3 +34,5 @@ github.com/Xplit495/hangman-classic v0.0.0-20240209160232-d49f5e34647d h1:Ctht02
 github.com/Xplit495/hangman-classic v0.0.0-20240209160232-d49f5e34647d/go.mod h1:syVrpXjGrEoLgLSRFUmhGKqzCgmFBZ5mjxdjNQhWC4c=
 github.com/Xplit495/hangman-classic v0.0.0-20240209160723-dafc6f06635b h1:LbrxDvumXjlaxggJJaGitDkQjBkf3PddQZmsNEOo3Ao=
 github.com/Xplit495/hangman-classic v0.0.0-20240209160723-dafc6f06635b/go.mod h1:syVrpXjGrEoLgLSRFUmhGKqzCgmFBZ5mjxdjNQhWC4c=
+github.com/Xplit495/hangman-classic v0.0.0-20240212143215-331119f2ab9b h1:4Q/nWrJOWkRqLvpAhsX37S32yfarlt5mF045x+UlRM4=
+github.com/Xplit495/hangman-classic v0.0.0-20240212143215-331119f2ab9b/go.mod h1:syVrpXjGrEoLgLSRFUmhGKqzCgmFBZ5mjxdjNQhWC4c=

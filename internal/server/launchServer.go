@@ -16,6 +16,8 @@ import (
 type TemplateData struct {
 	DynamicText   string
 	Username      string
+	GoodWarning   string
+	BadWarning    string
 	LetterHistory []string
 	WordHistory   []string
 }
@@ -26,6 +28,9 @@ var (
 	letterHistory       []string
 	wordHistory         []string
 	username            string
+	goodWarning         string
+	badWarning          string
+	liveJose            = 10
 )
 
 func LaunchServer() {
@@ -59,7 +64,7 @@ func LaunchServer() {
 		if request.Method == http.MethodPost {
 			request.ParseForm()
 			proposition := request.FormValue("proposition")
-			letterHistory, wordHistory, wordPartiallyReveal = game.CheckProposition(proposition, arrSelectWord, wordPartiallyReveal, letterHistory, wordHistory)
+			letterHistory, wordHistory, wordPartiallyReveal, liveJose, goodWarning, badWarning = game.CheckProposition(liveJose, proposition, arrSelectWord, wordPartiallyReveal, letterHistory, wordHistory, goodWarning, badWarning)
 		}
 
 		data := TemplateData{
@@ -67,6 +72,8 @@ func LaunchServer() {
 			Username:      username,
 			LetterHistory: letterHistory,
 			WordHistory:   wordHistory,
+			GoodWarning:   goodWarning,
+			BadWarning:    badWarning,
 		}
 
 		tmpl, _ := template.ParseFiles(wd + "\\web\\html\\gamePage.html")

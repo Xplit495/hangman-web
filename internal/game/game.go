@@ -3,20 +3,42 @@ package game
 import (
 	"fmt"
 	"github.com/Xplit495/hangman-classic/util"
+	"os"
 )
 
-func CheckProposition(choice string, arrSelectWord []string, wordPartiallyReveal []string, letterHistory []string, wordHistory []string) ([]string, []string, []string) {
+func CheckProposition(liveJose int, choice string, arrSelectWord []string, wordPartiallyReveal []string, letterHistory []string, wordHistory []string, goodWarning string, badWarning string) ([]string, []string, []string, int, string, string) {
 	var (
 		inputValidation      bool
 		letterFind           bool
 		wordFind             bool
+		letterAlreadyUse     bool
+		wordAlreadyUse       bool
 		choiceToLowerStrings []string
 	)
+	badWarning = ""
+	goodWarning = ""
 	inputValidation, letterHistory, wordHistory, choiceToLowerStrings = util.StartGame(choice, wordPartiallyReveal, letterHistory, wordHistory)
+
 	if inputValidation {
 		wordPartiallyReveal, letterFind, wordFind = util.UpdateWord(arrSelectWord, wordPartiallyReveal, choiceToLowerStrings)
+		letterHistory, wordHistory, letterAlreadyUse, wordAlreadyUse = util.UpdateHistroy(letterHistory, wordHistory, choiceToLowerStrings)
+		if letterAlreadyUse || wordAlreadyUse {
+			badWarning = "Attention vous avez déjà essayé ce mot ou cette lettre !"
+		} else {
+			goodWarning = "Correct !"
+			if wordFind {
+				os.Exit(0)
+			}
+			if !wordFind && len(choiceToLowerStrings) > 1 {
+				liveJose -= 2
+			} else {
+				liveJose--
+			}
+		}
+		fmt.Println(liveJose)
 		fmt.Println(letterFind)
-		fmt.Println(wordFind)
+	} else {
+		badWarning = "Merci de saisir un mot de la même longueur OU une lettre de l'alphabet !"
 	}
-	return letterHistory, wordHistory, wordPartiallyReveal
+	return letterHistory, wordHistory, wordPartiallyReveal, liveJose, goodWarning, badWarning
 }

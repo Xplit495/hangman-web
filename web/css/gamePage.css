@@ -52,6 +52,22 @@ body {
     margin-top : 200px;
 }
 
+#letterHistory{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    margin-left: 80%;
+    color: #d2c38f;
+}
+
+#wordHistory{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    margin-left: 80%;
+    color: #d2c38f;
+}
+
 .container {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
