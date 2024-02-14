@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Xplit495/hangman-classic/util"
 	"os"
+	"strconv"
 )
 
 func CheckProposition(liveJose int, choice string, arrSelectWord []string, wordPartiallyReveal []string, letterHistory []string, wordHistory []string, goodWarning string, badWarning string) ([]string, []string, []string, int, string, string) {
@@ -42,4 +43,9 @@ func CheckProposition(liveJose int, choice string, arrSelectWord []string, wordP
 		badWarning = "Merci de saisir un mot de la même longueur OU une lettre de l'alphabet !"
 	}
 	return letterHistory, wordHistory, wordPartiallyReveal, liveJose, goodWarning, badWarning
+}
+
+func ChoosePathJosePosition(liveJose int) string {
+	pathJose := "../resourcesWeb/" + strconv.Itoa(10-liveJose) + ".png"
+	return pathJose
 }

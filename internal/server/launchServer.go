@@ -18,6 +18,7 @@ type TemplateData struct {
 	Username      string
 	GoodWarning   string
 	BadWarning    string
+	ImagePath     string
 	LetterHistory []string
 	WordHistory   []string
 }
@@ -30,6 +31,7 @@ var (
 	username            string
 	goodWarning         string
 	badWarning          string
+	imagePath           string
 	liveJose            = 10
 )
 
@@ -67,6 +69,20 @@ func LaunchServer() {
 			letterHistory, wordHistory, wordPartiallyReveal, liveJose, goodWarning, badWarning = game.CheckProposition(liveJose, proposition, arrSelectWord, wordPartiallyReveal, letterHistory, wordHistory, goodWarning, badWarning)
 		}
 
+		counter := 0
+		for i := 0; i < len(arrSelectWord); i++ {
+			if wordPartiallyReveal[i] == arrSelectWord[i] {
+				counter++
+			}
+		}
+		if counter == len(arrSelectWord) && liveJose > 0 {
+			http.Redirect(writer, request, "/winningScreen.html", http.StatusSeeOther)
+		}
+		if liveJose <= 1 {
+			http.Redirect(writer, request, "/losingScreen.html", http.StatusSeeOther)
+		}
+
+		imagePath = game.ChoosePathJosePosition(liveJose)
 		data := TemplateData{
 			DynamicText:   strings.Join(wordPartiallyReveal, ""),
 			Username:      username,
@@ -74,10 +90,12 @@ func LaunchServer() {
 			WordHistory:   wordHistory,
 			GoodWarning:   goodWarning,
 			BadWarning:    badWarning,
+			ImagePath:     imagePath,
 		}
 
 		tmpl, _ := template.ParseFiles(wd + "\\web\\html\\gamePage.html")
 		tmpl.Execute(writer, data)
+
 	})
 
 	openBrowser("http://localhost:8080/")

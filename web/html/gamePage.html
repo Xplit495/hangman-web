@@ -9,7 +9,7 @@
 
 <body>
 <div class="bande">
-    <img src="../resourcesWeb/9.png" alt="Pose Hangman">
+    <img src="{{.ImagePath}}" alt="">
 </div>
 
 <div id="username">{{.Username}}</div>
@@ -26,7 +26,7 @@
             <div class="input-dist">
                 <div class="input-type">
                     <label>
-                        <input class="input-is" type="text" name="proposition" required placeholder="Proposition" maxlength="30" />
+                        <input autofocus class="input-is" type="text" name="proposition" required placeholder="Proposition" maxlength="30" />
                     </label>
                 </div>
             </div>
