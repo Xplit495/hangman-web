@@ -1,0 +1,61 @@
+body, html {
+    height: 100%; /* Full height for both body and html to ensure full page coverage. */
+    margin: 0; /* Removes the default margin. */
+    font-family: 'Arial', sans-serif; /* Sets a clean, sans-serif font for readability. */
+    background-color: #121212; /* Dark background for contrast with white text. */
+    display: flex; /* Enables flexbox layout to structure the content. */
+    flex-direction: column; /* Stacks children elements vertically. */
+    justify-content: space-between; /* Distributes space around items. */
+    color: white; /* Sets text color to white for readability against the dark background. */
+}
+
+.scoreboard {
+    text-align: center; /* Centers the scoreboard content horizontally. */
+    padding-top: 20px; /* Adds space above the scoreboard. */
+}
+
+.tableau {
+    background: linear-gradient(to right, #9575cd, #7c245b); /* Gradient background for visual appeal. */
+    color: #fff; /* White text for contrast. */
+    padding: 20px; /* Padding inside the container for spacing. */
+    margin: auto; /* Centers the scoreboard horizontally. */
+    width: 80%; /* Uses 80% of the parent's width. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds shadow for depth. */
+    border-radius: 10px; /* Rounds the corners of the container. */
+}
+
+.wrapper {
+    text-align: center; /* Centers the wrapper content horizontally. */
+    margin-bottom: 50px; /* Adds space below the wrapper. */
+}
+
+.title h1 {
+    font-size: 4em; /* Large font size for the main title, enhancing visibility. */
+}
+
+.title p {
+    font-size: 2em; /* Doubles the font size for the subtitle for emphasis. */
+    margin: 1em 0; /* Adds vertical spacing around the subtitle. */
+}
+
+.button {
+    border: none; /* Removes the default border. */
+    color: white; /* Ensures the text is white for contrast. */
+    padding: 1em 2em; /* Adds internal spacing for better readability and click-ability. */
+    text-align: center; /* Centers the text within the button. */
+    text-decoration: none; /* Removes underline from links styled as buttons. */
+    display: inline-block; /* Allows the element to be inline but also to specify width and height. */
+    font-size: 1.2em; /* Increases the font size for better visibility. */
+    margin: 1em; /* Adds external spacing around the button. */
+    cursor: pointer; /* Changes the mouse cursor to indicate clickable items. */
+    transition: background-color 0.3s; /* Smooth transition for the background color change on hover. */
+    border-radius: 20px; /* Rounds the corners of the button. */
+}
+
+.button-rejouer {
+    background: linear-gradient(to right, #673ab7, #9575cd); /* Gradient background for the replay button for aesthetic appeal. */
+}
+
+.button-rejouer:hover {
+    background-color: #9575cd; /* Changes the background color on hover for a visual feedback. */
+}

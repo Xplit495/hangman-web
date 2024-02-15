@@ -1,40 +1,53 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> <!-- Sets the language of the document to French. -->
 <head>
-    <title>Hangman Web</title>
-    <link rel="stylesheet" href="../css/gamePage.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document. -->
+    <title>Hangman Web</title> <!-- Sets the title of the document shown in the browser tab. -->
+    <link rel="icon" href="../resourcesWeb/favicon.ico" type="image/x-icon"> <!-- Links to the favicon icon. -->
+    <link rel="stylesheet" href="../css/gamePage.css"> <!-- Links to the CSS file for styling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the site is responsive. -->
 </head>
 
 <body>
+
 <div class="bande">
-    <img src="{{.ImagePath}}" alt="">
+    <img src="{{.ImagePath}}" alt=""> <!-- Displays the hangman image based on game progress. -->
 </div>
 
-<div id="username">{{.Username}}</div>
-<div id="word">{{.DynamicText}}</div>
-<div id="goodWarning">{{.GoodWarning}}</div>
-<div id="badWarning">{{.BadWarning}}</div>
+<div id="username">Bienvenue<br>{{.Username}} !</div> <!-- Greets the user by username. -->
+<div id="word">{{.Word}}</div> <!-- Shows the current state of the word being guessed. -->
+<div id="goodWarning">{{.GoodWarning}}</div> <!-- Displays a message for correct guesses. -->
+<div id="badWarning">{{.BadWarning}}</div> <!-- Displays a warning for incorrect guesses. -->
 
-<div id ="letterHistory">{{.LetterHistory}}</div>
-<div id ="wordHistory">{{.WordHistory}}</div>
+<div class="history">
+    <div class="history-entry">
+        <div id="letterHistory">
+            <p>LETTRES :<br>{{.LetterHistory}}</p> <!-- Lists the history of letter guesses. -->
+        </div>
+    </div>
+    <div class="history-entry">
+        <div id="wordHistory">
+            <p>MOTS :<br>{{.WordHistory}}</p> <!-- Lists the history of word guesses. -->
+        </div>
+    </div>
+</div>
 
-<form method="post" class="container">
-    <div class="input-container">
-        <div class="input-content">
-            <div class="input-dist">
-                <div class="input-type">
-                    <label>
-                        <input autofocus class="input-is" type="text" name="proposition" required placeholder="Proposition" maxlength="30" />
-                    </label>
+<div class="pre-container">
+    <form method="post" class="container">
+        <div class="input-container">
+            <div class="input-content">
+                <div class="input-dist">
+                    <div class="input-type">
+                        <label>
+                            <input autofocus class="input-is" type="text" name="proposition" required placeholder="Proposition" maxlength="30" />
+                            <!-- Input field for making a guess. Autofocuses when the page loads. -->
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button class="submit-button">Valider</button>
-</form>
+    </form>
+</div>
 
 </body>
-
 </html>

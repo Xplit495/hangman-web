@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> <!-- Sets the language of the document to French. -->
 <head>
-  <meta charset="UTF-8">
-  <title>Hangman-Web</title>
-  <link rel="icon" href="../resourcesWeb/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="../css/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the document. -->
+    <title>Hangman Web</title> <!-- Sets the title of the document shown in the browser tab. -->
+    <link rel="icon" href="../resourcesWeb/favicon.ico" type="image/x-icon"> <!-- Links to the favicon icon. -->
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Links to the CSS file for styling. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the site is responsive. -->
 </head>
 
 <body>
 
-<form action="/submit" method="post">
+<form action="/submit" method="post"> <!-- Form for submitting the username and selected difficulty. -->
 
-  <div class="input-container">
-    <label>
-      <input autofocus type="text" class="input" name="username" placeholder="Username" required maxlength="15">
-    </label>
-  </div>
+    <div class="input-container">
+        <label>
+            <input type="text" class="input" name="username" placeholder="Username" required maxlength="15" autofocus="autofocus">
+            <!-- Input field for the username, automatically focused when the page loads. -->
+        </label>
+    </div>
 
-  <div class="button-container">
-    <button type="submit" class="button" id="easy" name="difficulty" value="easy">Facile</button>
-    <button type="submit" class="button" id="medium" name="difficulty" value="medium">Moyen</button>
-    <button type="submit" class="button" id="hard" name="difficulty" value="hard">Difficile</button>
-  </div>
+    <div class="button-container">
+        <button type="submit" class="button" id="easy" name="difficulty" value="easy">Facile</button> <!-- Button to select 'Easy' difficulty. -->
+        <button type="submit" class="button" id="medium" name="difficulty" value="medium">Moyen</button> <!-- Button to select 'Medium' difficulty. -->
+        <button type="submit" class="button" id="hard" name="difficulty" value="hard">Difficile</button> <!-- Button to select 'Hard' difficulty. -->
+    </div>
 
 </form>
 
 </body>
+
 </html>

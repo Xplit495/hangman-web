@@ -1,170 +1,172 @@
-body {
+/* Setting the font family for the entire document to Arial or sans-serif as fallback */
+body{
+    font-family: 'Arial', sans-serif;
+    /* Setting the background image and styling */
     background-image: url('../resourcesWeb/WallpaperHangman.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    max-width: 60%;
+    background-repeat: no-repeat; /* Preventing background image from repeating */
+    background-size: cover; /* Scaling the background image to cover the entire viewport */
+    background-position: center; /* Positioning the background image at the center */
+    background-attachment: fixed; /* Fixing the background position */
 }
 
+/* Styling for the colored band */
 .bande {
     position: absolute;
     top: 0;
     left: 0;
-    width: 35%;
-    height: 100%;
+    width: 35%; /* Setting the width of the band */
+    height: 100%; /* Setting the height of the band */
+    /* Creating a linear gradient background from magenta to blue */
     background: linear-gradient(to right, magenta, blue);
-    background-size: 200% 200%;
-    animation: AnimationName 5s ease infinite;
+    background-size: 200% 200%; /* Setting background size for animation */
+    animation: AnimationName 5s ease infinite; /* Applying animation */
 }
 
-.bande img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-}
-
+/* Keyframes for the animation of the colored band */
 @keyframes AnimationName {
     0%{background-position:100% 0}
     50%{background-position:0 100%}
     100%{background-position:100% 0}
 }
 
+/* Styling for the image within the band */
+.bande img {
+    width: 100%; /* Setting image width to 100% */
+    height: 100%; /* Setting image height to 100% */
+    position: absolute; /* Positioning the image absolutely */
+    top: 50%; /* Placing the image vertically at 50% */
+    left: 50%; /* Placing the image horizontally at 50% */
+    transform: translate(-50%, -50%); /* Centering the image */
+}
+
+/* Styling for the username */
 #username{
-    display: flex;
-    margin-left: 83%;
-    font-size: 50px;
-    color: #d2c38f;
+    font-size: 50px; /* Setting font size */
+    color: #50b4f5; /* Setting font color */
+    margin-left: 37%; /* Setting left margin */
+    font-style: italic; /* Setting font style to italic */
+    text-align: center; /* Centering the text */
 }
 
+/* Styling for the word */
 #word{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    margin-left: 80%;
-    margin-top: 20%;
-    font-size: 50px;
-    color: #d2c38f;
-    margin-top : 200px;
+    margin-left: 62%; /* Setting left margin */
+    font-size: 50px; /* Setting font size */
+    color: #ffffff; /* Setting font color */
+    margin-top : 110px; /* Setting top margin */
+    margin-bottom: 90px; /* Setting bottom margin */
 }
 
-#letterHistory{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    margin-left: 80%;
-    color: #d2c38f;
-}
-
-#wordHistory{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    margin-left: 80%;
-    color: #d2c38f;
-}
-
+/* Styling for the good warning message */
 #goodWarning{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    margin-left: 80%;
-    color: #00ff00;
+    margin-left: 65.9%; /* Setting left margin */
+    color: #00ff00; /* Setting font color */
+    font-size: x-large; /* Setting font size */
 }
 
+/* Styling for the bad warning message */
 #badWarning{
-    width: 50%;
-    height: 10%;
-    display: flex;
-    margin-left: 80%;
-    color: #ff0000;
+    margin-left: 53.5%; /* Setting left margin */
+    margin-bottom: 90px; /* Setting bottom margin */
+    color: #ff0000; /* Setting font color */
+    font-size: x-large; /* Setting font size */
 }
 
+/* Styling for the history section */
+.history {
+    display: flex; /* Setting display property to flex */
+    justify-content: center; /* Centering content horizontally */
+    font-size: xx-large; /* Setting font size */
+    text-align: center; /* Centering text */
+}
+
+/* Styling for each history entry */
+.history-entry {
+    margin-left: 35%; /* Setting left margin */
+}
+
+/* Styling for the letter history */
+#letterHistory{
+    color: #771e63; /* Setting font color */
+}
+
+/* Styling for the word history */
+#wordHistory{
+    color: #757bc0; /* Setting font color */
+}
+
+/* Styling for the container holding the input elements */
+.pre-container{
+    display: flex; /* Setting display property to flex */
+    margin-left: 55%; /* Setting left margin */
+    margin-top: 6px; /* Setting top margin */
+}
+
+/* Styling for the main container */
 .container {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    font-size: 100%;
-    margin-left: 100%;
-    margin-top: 18%;
-    align-items: center;
-    justify-items: center;
-    flex-direction: column;
-    gap: 1em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Setting font family */
+    display: flex; /* Setting display property to flex */
+    margin-top: 25%; /* Setting top margin */
+    align-items: center; /* Centering items vertically */
+    justify-items: center; /* Centering items horizontally */
+    flex-direction: column; /* Setting flex direction to column */
 }
 
+/* Styling for the input container */
 .input-container {
-    filter: drop-shadow(46px 36px 24px #4090b5)
-    drop-shadow(-55px -40px 25px #9e30a9);
-    animation: blinkShadowsFilter 8s ease-in infinite;
-    margin-left: 40%;
-    margin-top: -20%;
+    /* Applying drop shadow filter */
+    filter: drop-shadow(46px 36px 24px #4090b5) drop-shadow(-55px -40px 25px #9e30a9);
+    animation: blinkShadowsFilter 8s ease-in infinite; /* Applying animation */
+    margin-top: -20%; /* Setting top margin */
 }
 
+/* Styling for the input content */
 .input-content {
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
-    text-align: center;
-    padding-inline: 1em;
+    display: grid; /* Setting display property to grid */
+    align-content: center; /* Centering content vertically */
+    justify-items: center; /* Centering items horizontally */
+    align-items: center; /* Centering items vertically */
+    text-align: center; /* Centering text */
+    padding-inline: 1em; /* Setting inline padding */
 }
 
+/* Styling for the background of input content */
 .input-content::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    content: ""; /* Adding content */
+    position: absolute; /* Positioning absolutely */
+    width: 100%; /* Setting width to 100% */
+    height: 100%; /* Setting height to 100% */
+    /* Applying blur and clip path for effect */
     filter: blur(40px);
-    -webkit-clip-path: polygon(
-            26% 0,
-            66% 0,
-            92% 0,
-            100% 8%,
-            100% 89%,
-            91% 100%,
-            7% 100%,
-            0 92%,
-            0 0
-    );
-    clip-path: polygon(
-            26% 0,
-            66% 0,
-            92% 0,
-            100% 8%,
-            100% 89%,
-            91% 100%,
-            7% 100%,
-            0 92%,
-            0 0
-    );
-    background: rgba(122, 251, 255, 0.5568627451);
-    transition: all 1s ease-in-out;
+    -webkit-clip-path: polygon(26% 0, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
+    clip-path: polygon(26% 0, 66% 0, 92% 0, 100% 8%, 100% 89%, 91% 100%, 7% 100%, 0 92%, 0 0);
+    background: rgba(122, 251, 255, 0.5568627451); /* Setting background color */
+    transition: all 1s ease-in-out; /* Adding transition effect */
 }
 
+/* Styling for the glitch effect behind input content */
 .input-content::after {
-    content: "";
-    position: absolute;
-    width: 98%;
-    height: 98%;
+    content: ""; /* Adding content */
+    position: absolute; /* Positioning absolutely */
+    width: 98%; /* Setting width to 98% */
+    height: 98%; /* Setting height to 98% */
+    /* Applying box shadow and background for glitch effect */
     box-shadow: inset 0 0 20px 20px #212121;
     background: repeating-linear-gradient(
             to bottom,
-            transparent 0%,
-            rgba(64, 144, 181, 0.6) 1px,
-            rgb(0, 0, 0) 3px,
-            hsl(295, 60%, 12%) 5px,
-            #153544 4px,
-            transparent 0.5%
+            transparent 0%, /* Transparent at the start */
+            rgba(64, 144, 181, 0.6) 1px, /* Gradually transitioning to light blue */
+            rgb(0, 0, 0) 3px, /* Adding dark lines */
+            hsl(295, 60%, 12%) 5px, /* Adding dark color */
+            #153544 4px, /* Adding another dark color */
+            transparent 0.5% /* Gradually transitioning to transparency */
     ),
     repeating-linear-gradient(
             to left,
-            hsl(295, 60%, 12%) 100%,
-            hsla(295, 60%, 12%, 0.99) 100%
+            hsl(295, 60%, 12%) 100%, /* Horizontal gradient to the left */
+            hsla(295, 60%, 12%, 0.99) 100% /* Gradually fading out */
     );
+    /* Applying clip path for shape */
     -webkit-clip-path: polygon(
             26% 0,
             31% 5%,
@@ -191,47 +193,52 @@ body {
             0 92%,
             0 0
     );
-    animation: backglitch 50ms linear infinite;
+    animation: backglitch 50ms linear infinite; /* Applying animation */
 }
 
+/* Styling for the input distribution container */
 .input-dist {
-    z-index: 80;
-    display: grid;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding-inline: 10em;
-    padding-block: 3.5em;
-    grid-template-columns: 1fr;
+    z-index: 80; /* Setting z-index */
+    display: grid; /* Setting display property to grid */
+    align-items: center; /* Centering items vertically */
+    text-align: center; /* Centering text */
+    width: 100%; /* Setting width to 100% */
+    padding-inline: 10em; /* Setting inline padding */
+    padding-block: 3.5em; /* Setting block padding */
+    grid-template-columns: 1fr; /* Defining grid columns */
 }
 
+/* Styling for the input type */
 .input-type {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 1em;
-    font-size: 1.1rem;
-    background-color: transparent;
-    width: 100%;
-    border: none;
+    display: flex; /* Setting display property to flex */
+    flex-wrap: wrap; /* Allowing wrapping */
+    flex-direction: column; /* Setting flex direction to column */
+    gap: 1em; /* Setting gap between items */
+    font-size: 1.1rem; /* Setting font size */
+    background-color: transparent; /* Setting background color to transparent */
+    width: 100%; /* Setting width to 100% */
+    border: none; /* Removing border */
 }
 
+/* Styling for the input element */
 .input-is {
-    color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-    background-color: transparent;
-    width: 100%;
-    box-sizing: border-box;
-    padding-inline: 0.5em;
-    padding-block: 0.7em;
-    border: none;
-    transition: all 1s ease-in-out;
-    border-bottom: 1px solid hsl(221, 26%, 43%);
+    color: #fff; /* Setting font color */
+    text-align: center; /* Centering text */
+    font-size: 0.9rem; /* Setting font size */
+    background-color: transparent; /* Setting background color to transparent */
+    width: 100%; /* Setting width to 100% */
+    box-sizing: border-box; /* Setting box-sizing to border-box */
+    padding-inline: 0.5em; /* Setting inline padding */
+    padding-block: 0.7em; /* Setting block padding */
+    border: none; /* Removing border */
+    transition: all 1s ease-in-out; /* Adding transition effect */
+    border-bottom: 1px solid hsl(221, 26%, 43%); /* Adding bottom border */
 }
 
+/* Styling for the input element on hover */
 .input-is:hover {
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out; /* Adding transition effect */
+    /* Applying linear gradient background on hover */
     background: linear-gradient(
             90deg,
             transparent 0%,
@@ -241,15 +248,18 @@ body {
     );
 }
 
+/* Styling for the input content when focused */
 .input-content:focus-within::before {
-    transition: all 1s ease-in-out;
-    background: hsla(0, 0%, 100%, 0.814);
+    transition: all 1s ease-in-out; /* Adding transition effect */
+    background: hsla(0, 0%, 100%, 0.814); /* Changing background color */
 }
 
+/* Styling for the input element when focused */
 .input-is:focus {
-    outline: none;
-    border-bottom: 1px solid hsl(192, 100%, 100%);
-    color: hsl(192, 100%, 88%);
+    outline: none; /* Removing outline */
+    border-bottom: 1px solid hsl(192, 100%, 100%); /* Changing bottom border */
+    color: hsl(192, 100%, 88%); /* Changing font color */
+    /* Applying linear gradient background when focused */
     background: linear-gradient(
             90deg,
             transparent 0%,
@@ -259,62 +269,31 @@ body {
     );
 }
 
+/* Styling for placeholder text in Firefox */
 .input-is::-moz-placeholder {
-    color: hsla(192, 100%, 88%, 0.806);
+    color: hsla(192, 100%, 88%, 0.806); /* Setting placeholder color */
 }
 
+/* Styling for placeholder text */
 .input-is::placeholder {
-    color: hsla(192, 100%, 88%, 0.806);
+    color: hsla(192, 100%, 88%, 0.806); /* Setting placeholder color */
 }
 
+/* Keyframes for the blink shadows filter animation */
 @keyframes blinkShadowsFilter {
     0% {
-        filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706))
-        drop-shadow(-55px -40px 28px #9e30a9);
+        filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
     }
-
     25% {
-        filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.8980392157))
-        drop-shadow(-55px 40px 24px #9e30a9);
+        filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 24px #9e30a9);
     }
-
     50% {
-        filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.8980392157))
-        drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.2941176471));
+        filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.2941176471));
     }
-
     75% {
-        filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.8980392157))
-        drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.2941176471));
+        filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.8980392157)) drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.2941176471));
     }
-
     to {
-        filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706))
-        drop-shadow(-55px -40px 28px #9e30a9);
+        filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.3411764706)) drop-shadow(-55px -40px 28px #9e30a9);
     }
-}
-
-
-.submit-button {
-    width: 100%;
-    border: none;
-    color: hsla(192, 100%, 88%, 0.8);
-    font-size: 1rem;
-    background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(102, 224, 255, 0.2) 27%,
-            rgba(102, 224, 255, 0.2) 63%,
-            transparent 100%
-    );
-    padding: 100%;
-}
-
-.submit-button:hover {
-    color: hsl(0, 0%, 100%);
-    cursor: pointer;
-    font-size: medium;
-    font-weight: bold;
-    z-index: 1;
-    margin-left: 83%;
 }

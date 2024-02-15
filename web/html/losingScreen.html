@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"> <!-- Document language is set to French. -->
 <head>
-    <meta charset="UTF-8">
-    <title>Losing</title>
+    <meta charset="UTF-8"> <!-- Character encoding for the document. -->
+    <title>Défaite au Pendu!</title> <!-- Document title, shown in the browser tab. -->
+    <link rel="icon" href="../resourcesWeb/favicon.ico" type="image/x-icon"> <!-- Favicon for the website. -->
+    <link rel="stylesheet" href="../css/losingScreen.css"> <!-- External CSS file for styling the losing screen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design meta tag. -->
 </head>
+
 <body>
 
+<div class="scoreboard">
+    <h2>Scoreboard</h2> <!-- Heading for the scoreboard section. -->
+    <div class="tableau">
+        <p>Vous avez essayé les lettres :</p> <!-- Text indicating the letters tried by the player. -->
+        <p>{{.LetterHistory}}</p> <!-- Dynamically displays the history of letters tried. -->
+        <p>Vous avez essayé les mots :</p> <!-- Text indicating the words tried by the player. -->
+        <p>{{.WordHistory}}</p> <!-- Dynamically displays the history of words tried. -->
+        <p>Le mot à trouver était :</p> <!-- Text indicating the correct word to be found. -->
+        <p>{{.ArrSelectWord}}</p> <!-- Dynamically displays the correct word that was to be guessed. -->
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="title">
+        <h1>Dommage...</h1> <!-- Heading displayed upon losing the game. -->
+        <p>Vous n'avez pas trouvé le mot.</p> <!-- Text indicating the player did not find the word. -->
+    </div>
+    <form action="/restart1" method="post">
+        <div class="options">
+            <button class="button button-rejouer">Rejouer</button> <!-- Button to restart or replay the game. -->
+        </div>
+    </form>
+</div>
+
 </body>
+
 </html>

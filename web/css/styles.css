@@ -1,74 +1,72 @@
 body {
-  background-image: url("../resourcesWeb/WallpaperHangman.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-image: url("../resourcesWeb/WallpaperHangman.png"); /* Sets a background image for the entire page. */
+  background-repeat: no-repeat; /* Ensures the background image does not repeat. */
+  background-size: cover; /* Ensures the background covers the entire page. */
+  background-position: center; /* Centers the background image on the page. */
+  background-attachment: fixed; /* The background image does not scroll with the page. */
 }
 
 .input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 25vh;
-  padding-bottom: 2%;
-  box-sizing: border-box;
+  display: flex; /* Uses Flexbox for layout, enabling alignment and distribution of child elements. */
+  justify-content: center; /* Centers the child elements horizontally within the container. */
+  padding-top: 250px; /* Adds space above the input container. */
+  padding-bottom: 1.5%; /* Adds a small padding below the container. */
+  margin-left: 2%; /* Slightly offsets the container from the left edge. */
 }
 
 .input {
-  color: #8707ff;
-  border: 2px solid #8707ff;
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  width: 100%;
-  max-width: 300px;
-  box-sizing: border-box;
+  color: #8707ff; /* Sets the text color inside the input field. */
+  border: 2px solid #8707ff; /* Adds a purple border to the input field. */
+  border-radius: 10px; /* Rounds the corners of the input field. */
+  padding: 10px 25px; /* Adds padding inside the input field for spacing. */
+  background: transparent; /* Makes the input field background transparent. */
+  font-size: large; /* Increases the font size inside the input field. */
+  max-width: 300px; /* Restricts the maximum width of the input field. */
+  text-align: center; /* Centers the text inside the input field. */
 }
 
 .button-container{
-  display: flex;
-  margin-top: 4%;
-  width: 98vw;
-  justify-content: center;
+  display: flex; /* Uses Flexbox for the layout of buttons. */
+  margin-top: 6%; /* Adds space above the button container. */
+  margin-left: 2%; /* Slightly offsets the container from the left edge. */
+  justify-content: center; /* Centers the buttons horizontally within the container. */
 }
 
 .button {
-  margin-right: 3%;
-  padding: 10px 20px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  text-transform: uppercase;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  margin-right: 3%; /* Adds spacing between buttons. */
+  padding: 10px 20px; /* Adds padding inside the buttons for spacing. */
+  font-size: 23px; /* Increases the font size of the button text. */
+  text-transform: uppercase; /* Converts button text to uppercase for stylistic preference. */
+  color: white; /* Sets the button text color to white. */
+  border: none; /* Removes the default border from buttons. */
+  border-radius: 20px; /* Rounds the corners of buttons. */
+  cursor: pointer; /* Changes the mouse cursor to indicate clickable items. */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow to buttons for depth. */
+  transition: all 0.3s ease; /* Smooth transition for button effects. */
 }
 
 .button:last-child {
-  margin-right: 0;
-  font-size: 15px;
+  margin-right: 0; /* Removes the right margin from the last button to align properly. */
+  font-size: 22px; /* Slightly reduces the font size for the last button for differentiation. */
 }
 
 .button:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); /* Enhances the shadow effect on hover for visual feedback. */
 }
 
 .button:active {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 60px rgba(0, 0, 0, 0.2); /* Deepens the shadow when the button is clicked. */
 }
 
-
-#easy {
-  background-color: #172888
+#easy, #medium, #hard {
+  /* Apply specific background colors to each difficulty button for visual differentiation. */
+  background-color: #172888; /* Dark blue for 'easy'. */
 }
 
 #medium {
-  background-color: #4a1f6e;
+  background-color: #4a1f6e; /* Dark purple for 'medium'. */
 }
 
 #hard {
-  background-color: #701f57;
+  background-color: #701f57; /* Dark pink/magenta for 'hard'. */
 }

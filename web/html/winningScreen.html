@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr"> <!-- Sets the document's language to French. -->
 <head>
-    <meta charset="UTF-8">
-    <title>Winning</title>
+    <meta charset="UTF-8"> <!-- Specifies the character encoding for the webpage. -->
+    <title>Victoire au Pendu!</title> <!-- The title of the document, displayed in the browser's title bar or tab. -->
+    <link rel="icon" href="../resourcesWeb/favicon.ico" type="image/x-icon"> <!-- Links to a favicon displayed in the tab. -->
+    <link rel="stylesheet" href="../css/winningScreen.css"> <!-- External CSS for styling the winning screen. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the site is mobile-friendly. -->
 </head>
+
 <body>
 
+<div class="scoreboard">
+    <h2>Scoreboard</h2> <!-- Section heading for the scoreboard. -->
+    <div class="tableau">
+        <p>Vous avez essayé les lettres :</p> <!-- Indicates the letters the player has tried. -->
+        <p>{{.LetterHistory}}</p> <!-- Dynamically displays the letters tried by the player. -->
+        <p>Vous avez essayé les mots :</p> <!-- Indicates the words the player has tried. -->
+        <p>{{.WordHistory}}</p> <!-- Dynamically displays the words tried by the player. -->
+        <p>Le mot était :</p> <!-- Indicates the correct word. -->
+        <p>{{.ArrSelectWord}}</p> <!-- Dynamically displays the correct word that was to be guessed. -->
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="title">
+        <h1>Félicitations!</h1> <!-- Congratulates the player for winning. -->
+        <p>Vous avez trouvé le mot!</p> <!-- Indicates the player has successfully guessed the word. -->
+    </div>
+    <form action="/restart" method="post">
+        <div class="options">
+            <button class="button button-rejouer">Rejouer</button> <!-- Button to restart or play again. -->
+        </div>
+    </form>
+</div>
+
 </body>
+
 </html>
